@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOCX to HTML Converter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="main">
+      <div class="container">
+        <h1>Convert DOCX to HTML</h1>
+        <div class="file-upload">
+          <form
+            id="uploadForm"
+            action="/upload"
+            method="POST"
+            enctype="multipart/form-data"
+            class="drop-area"
+          >
+            <input
+              type="file"
+              id="fileInput"
+              name="docxFile"
+              accept=".docx"
+              required
+              hidden
+            />
+            <p class="choose-file">Choose File or Drag and Drop Here</p>
+          </form>
+        </div>
+        <button type="submit" form="uploadForm">Upload and Convert</button>
+
+        <div id="loading" style="display: none">Converting... Please wait.</div>
+        <div id="result" style="display: none">
+          <p>Your HTML file is ready for download:</p>
+          <a id="downloadLink" href="#">Download HTML</a>
+        </div>
+      </div>
+    </div>
+    <script src="js/script.js"></script>
+  </body>
+</html>
